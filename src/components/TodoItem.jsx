@@ -79,12 +79,14 @@ function TodoItem({ id, task, isCompleted }) {
           </>
         ) : (
           <>
-            <button
-              onClick={handleEdit}
-              className="px-3 py-1 text-sm bg-yellow-500 text-white rounded hover:bg-yellow-600"
-            >
-              Edit
-            </button>
+            {!isCompleted && (
+              <button
+                onClick={handleEdit}
+                className="px-3 py-1 text-sm bg-yellow-500 text-white rounded hover:bg-yellow-600"
+              >
+                Edit
+              </button>
+            )}
             <button
               onClick={handleDelete}
               className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600"
